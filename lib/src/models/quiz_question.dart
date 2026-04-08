@@ -69,7 +69,11 @@ class QuizQuestion<T extends QuizItem> {
                       ? QuizDirection.enToTr
                       : QuizDirection.trToEn)
                   : direction;
-      if (mode == QuizMode.multipleChoice) {
+      if (mode == QuizMode.multipleChoice ||
+          mode == QuizMode.progressive ||
+          mode == QuizMode.sprint ||
+          mode == QuizMode.timeAttack ||
+          mode == QuizMode.dailyChallenge) {
         final correct = effectiveDirection == QuizDirection.enToTr
             ? w.definition
             : w.term;
